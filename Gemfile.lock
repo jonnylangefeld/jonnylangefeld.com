@@ -89,6 +89,7 @@ DEPENDENCIES
   jekyll-twitter-plugin
   jemoji
   minima (~> 2.3)
+  rouge
 
 BUNDLED WITH
    1.16.1
