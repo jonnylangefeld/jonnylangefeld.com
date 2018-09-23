@@ -32,7 +32,7 @@ meta: {}
 
     <p><b>Message</b></p>
     <textarea placeholder="Your message" name="message"></textarea>
-    <input type="hidden" name="_subject" value="New message from langefeld.online" />
+    <input type="hidden" name="_subject" value="New message from jonnylangefeld.com" />
     <br />
     <input type="submit" value="Submit">
   </form>
