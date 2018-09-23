@@ -12,4 +12,5 @@ published: true
 meta: {}
 ---
 Welcome! You found me online!!! (Which is not very hard I suppose).    
-This is my first post on my website, where I post things I'm interested in. 
+This is my first post on my website, where I post things I'm interested in.    
+If you are seeing this, my build worked!
