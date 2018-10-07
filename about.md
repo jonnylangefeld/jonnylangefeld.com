@@ -12,11 +12,17 @@ meta: {}
 <h1 style="text-align: center; margin-bottom: 40px; margin-top: -50px">About</h1>
 
 <div>
-  <p>I am a data enthusiast and end-to-end developer of complex, global data solutions in an interdisciplinary environment of (predictive) Analytics, Big Data and (automotive) software development. My thorough hands-on experience in global teams with IBM and Mercedes-Benz is built upon numerous projects to collect, store, prepare and analyze data to make valuable predictions, support decisions and build data-driven products.</p>
+  <p>I am a data enthusiast and end-to-end developer of complex, global data solutions in an environment of (predictive) Analytics, Big Data and (automotive) software development. My interdisciplinary skillset reaches from software development over project management to data science and machine learning. My thorough hands-on experience in global teams with IBM and Mercedes-Benz is built upon numerous projects to collect, store, prepare and analyze data to make valuable predictions, support decisions and build data-driven products.</p>
+
+  <p>The vast majority of my skills is self taught on evenings and weekends. The internet taught me about the command line, building websites, <a href="https://github.com/jonnylangefeld">getting comfortable with git</a>, <a href="https://github.com/jonnylangefeld/ChordPro">writing programs with python</a>, <a href="https://github.com/jonnylangefeld/SPSSTwitter">creating free Add-on nodes for SPSS Modeler</a> and <a h href="https://www.kaggle.com/jonnylangefeld/explore-dividends">analysing data with pandas</a>, <a href="https://github.com/jonnylangefeld/learning/blob/master/Machine%20Learning/scikit-learn%20Classifier.ipynb">skikit learn and numpy</a>. I read everything about docker on a beach in Cuba, with an app that allowed me to download websites. Ever since I'm a heavy user of the software and <a href="https://www.youtube.com/watch?v=JprTjTViaEA&t=2s">teach others how to use it.</a> (All links lead to examples of my work).</p>
 
   <p><b>University</b></p>
 
-  <p>I graduated with a B.Sc. from the (<a href="http://www.dhbw.de/english/home.html" target="_blank">Cooperative State University Stuttgart</a>) in Germany.</p>
+  <p>I graduated with a B.Sc. in business information technology from the (<a href="http://www.dhbw.de/english/home.html" target="_blank">Cooperative State University Stuttgart</a>) in Germany.</p>
+
+  <p><b>Projects</b></p>
+
+  <p>I have worked on a great variaty of different projects in various roles. I have been a data science consultant with IBM for many large corporations (like Daimler, Continental, Porsche, Bosch, Fiducia), I have been a software developer with energy smart and open source software and I worked as a technical project manager with software development tasks for Mercedes-Benz. For all the details of the projects publicly available, head over to my <a href="http://www.dhbw.de/english/home.html" target="_blank">Linked In page</a>, where I keep an up-to-date list of my projects.</p>
 
   <p><b>Resumé</b></p>
   <p>If you're interested in my professional and educational history, you can take a look at my resumé <a href="/assets/about/Resumé Jonathan Langefeld.pdf" target="_blank">here</a>.</p>
@@ -25,8 +31,8 @@ meta: {}
 
 <div style="width: 100%; float: left; margin-top: 20px">
   <hr />
-
-  <form id="contactform" method="POST" action="https://formspree.io/jonathan.langefeld@me.com">
+  <form id="contactform" method="POST" action="https://formspree.io/jonny.langefeld@gmail.com">
+    <p><b>Send me something!</b></p>
     <p><b>Email Address</b></p>
     <input type="email" name="_replyto" placeholder="Your email address">
 
