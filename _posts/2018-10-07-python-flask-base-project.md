@@ -12,16 +12,16 @@ type: post
 published: true
 meta: {}
 ---
-This blog post describes my favorite setup of a project sceleton for a python flask web app or api. Keep on reading if you are interested in best practices for a python flask folder structure, architecture setup and testing. The repository with all files can be found [here](https://github.com/jonnylangefeld/flask-base-project). It's helpful for this blogpost to download the repository. I'll explain all necessary files and the folder structure.
+This blog post describes my favorite setup of a project skeleton for a python flask web app or api. Keep on reading if you are interested in best practices for a python flask folder structure, architecture setup and testing. The repository with all files can be found [here](https://github.com/jonnylangefeld/flask-base-project). It's helpful for this blog post to download the repository. I'll explain all necessary files and the folder structure.
 
 ### Docker First
 
-Like many of my projects, I like to dockerize everything. This also leads me to the only prerequesite: have docker installed ([I made a video how to install it](https://www.youtube.com/watch?v=JprTjTViaEA)). I like that everything is included with docker and I can virtually run it on any cloud platform (because all of them offer container hosting services / webapps). Apart from that, I've often had the case, that one python package doesn't like the other. So if you happen to develop mutliple projects on your computer ever, then it's very likely that you run into similar issues. Docker takes care of it and separates each project from one another. It's like a lightweight linux instance with only python installed. I don't like python's virtualenvs too much, because it copies all python dependencies into my working directory.    
+Like many of my projects, I like to dockerize everything. This also leads me to the only prerequisite: have docker installed ([I made a video how to install it](https://www.youtube.com/watch?v=JprTjTViaEA)). I like that everything is included with docker and I can virtually run it on any cloud platform (because all of them offer container hosting services / webapps). Apart from that, I've often had the case, that one python package doesn't like the other. So if you happen to develop multiple projects on your computer ever, then it's very likely that you run into similar issues. Docker takes care of it and separates each project from one another. It's like a lightweight linux instance with only python installed. I don't like python's virtualenvs too much, because it copies all python dependencies into my working directory.    
 The container is built on a lightweight linux container. So let's start with the Dockerfile. In case you don't know what that is, I also recommend watching the linked video above. The steps are as follows:
-* Required packes from `requirements.txt` are installed
+* Required packages from `requirements.txt` are installed
 * All files required by the app are copied inside the container
 * Tests are executed on container build 
-* The app will be executed with the entrypoint:    
+* The app will be executed with the entrypoint `python app.py`:    
 
 ```docker
 FROM python:3.7-alpine3.7
@@ -47,7 +47,7 @@ Let's start with the high level structure and we will go into more details after
 └── requirements.txt
 ```
 
-So there's the `Dockerfile` we already talked about, there's an `app/` directory that contains all files the python app needs, there is a `deploy.sh` script, which contains a sceleton for a bash deployment script to any cloud provider (this file can be ignored if not needed), there's a readme as in any good repo and there's the `requirements.txt` that was mentioned in the Dockerfile. The Dockerfile copies the `app/` directory and the `requirements.txt` file inside the container and installs all packages defined in the `requirements.txt` file.
+So there's the `Dockerfile` we already talked about, there's an `app/` directory that contains all files the python app needs, there is a `deploy.sh` script, which contains a skeleton for a bash deployment script to any cloud provider (this file can be ignored if not needed), there's a readme as in any good repo and there's the `requirements.txt` that was mentioned in the Dockerfile. The Dockerfile copies the `app/` directory and the `requirements.txt` file inside the container and installs all packages defined in the `requirements.txt` file.
 
 ### The `requirements.txt` file
 
@@ -57,11 +57,11 @@ Flask==1.0.2
 requests==2.19.1
 pytest==3.8.0
 ```
-Now that we got that packes coverd, that get installed on docker build, only the `app/` directory is missing.
+Now that we got that packages covered, that get installed on docker build, only the `app/` directory is missing.
 
 ### The `app/` Directory
 
-Actually in the simplified folder struckture above, I left most of the contents of the `app/` directory out to confuse less in the beginning. Bet now that we unwrapped the different parts of the repo, let's look at it's contents:
+Actually in the simplified folder structure above, I left most of the contents of the `app/` directory out to confuse less in the beginning. Bet now that we unwrapped the different parts of the repo, let's look at it's contents:
 ```
 ├── app
 │   ├── app.py
@@ -83,7 +83,7 @@ Actually in the simplified folder struckture above, I left most of the contents 
 ```
 * The `app.py` file is where all the magic happens and I will go deeper into it in a minute.
 * The `/templates` directory will contain html template files for all main screens within your app. Think of it as the layout, and the logic of your app fills it later with contents. The template language is called [**Jinja2**](http://jinja.pocoo.org/docs/2.10/). It has cool features like loops, variables and if statements right inside of the template. ([The instagram website uses this Template language](http://jinja.pocoo.org/), isn't that cool?)
-* The `/static` folder contains all not variable web elements like css scripts, javascripts or images. I've pre-loaded this base repository with bootstrap and jquery as well as custom css and javascripts, but you can delete what you don't want. Not the unique way of including those file into your html site though. If you open the `index.html` file, where we include bootstrap and jquery, you'll find something like `<link rel="stylesheet" href="{ { url_for('static', filename='css/bootstrap.min.css') }}" />` in the header. This already calls a Jinja function to generate the url that directs to the static folder and then the subfolder `/css` and then to `bootstrap.min.css`.
+* The `/static` folder contains all not variable web elements like css scripts, javascripts or images. I've pre-loaded this base repository with bootstrap and jquery as well as custom css and javascripts, but you can delete what you don't want. Not the unique way of including those file into your html site though. If you open the `index.html` file, where we include bootstrap and jquery, you'll find something like `<link rel="stylesheet" href="{ { url_for('static', filename='css/bootstrap.min.css') }}" />` in the header. This already calls a Jinja function to generate the url that directs to the static folder and then the sub folder `/css` and then to `bootstrap.min.css`.
 * The `pytest.ini` file contains some preferences for testing
 * The `/testing` directory contains the actual scripts for unit tests and integration tests. With unit tests I test the single functions defined in the `app.py` script and their outputs, and with integration tests, I spin up an entire flask test client, that can query itself for API calls.
 
@@ -135,10 +135,10 @@ For the `test_integration.py` file, after the import block, there is a [pytest f
 
 ### Project Setup in PyCharm
 
-I like the testing and debug features of PyCharm, so I included the `.idea/` directory into the repo. In there are definitions like to execute the tests inside the docker container. Or when you click the debug button, it will spin up the container including the debugger so your brakepoints will work inside the containers. So when you open this repo with PyCharm, this would already be implemented.    
+I like the testing and debug features of PyCharm, so I included the `.idea/` directory into the repo. In there are definitions like to execute the tests inside the docker container. Or when you click the debug button, it will spin up the container including the debugger so your brake points will work inside the containers. So when you open this repo with PyCharm, this would already be implemented.    
 <img src="/assets/posts/pycharm-run-configurations.png" width="250" align="left" style="margin: 15px" />
 
-Look out for the run configurations within PyCharm. The `my-flask-app` configuration is to run and debug the actual app (inside the container) and the `pytest` configuration runs and debugs the tests (inside the container). I configured the run configurations so they would mount the `app/` directory inside the container. That means you don't need to rebuild the container for everye run (only once in the beginning).
+Look out for the run configurations within PyCharm. The `my-flask-app` configuration is to run and debug the actual app (inside the container) and the `pytest` configuration runs and debugs the tests (inside the container). I configured the run configurations so they would mount the `app/` directory inside the container. That means you don't need to rebuild the container for every run (only once in the beginning).
 
 ### Next Steps
 
