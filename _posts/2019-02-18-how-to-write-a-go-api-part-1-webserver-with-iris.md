@@ -124,4 +124,4 @@ import (
 
 You did it 🎊! From here you can now expand and scale your API. You can download the complete source code for this blog post [here](https://github.com/jonnylangefeld/go-api-base-project/archive/part-1.zip).
 
-Make sure to check back next week for part two on how to integrate a database.
+Make sure to [continue reading part two on how to integrate a database](/blog/how-to-write-a-go-api-part-2-database-integration).
