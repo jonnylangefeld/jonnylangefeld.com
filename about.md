@@ -22,7 +22,7 @@ meta: {}
 
   <p><b>Projects</b></p>
 
-  <p>I have worked on a great variety of projects in various roles. I have been a data science consultant with IBM for many large corporations (like Daimler, Continental, Porsche, Bosch, Fiducia). I have been a software developer with my startup, energy-smart, as well as for open-source software. I worked as a data engineer and technical project manager for Mercedes-Benz in Silicon Valley. For all the details of the projects publicly available, head over to my <a href="https://www.linkedin.com/in/jonnylangefeld/" target="_blank">Linked In page</a>, where I keep an up-to-date list of my projects.</p>
+  <p>I have worked on a great variety of projects in various roles. I have been a data science consultant with IBM for many large corporations (like Daimler, Continental, Porsche, Bosch, Fiducia). I have been a software developer with Mercedes, my startup energy-smart, as well as for open-source software. I worked as a data engineer and technical project manager for Mercedes-Benz in Silicon Valley. For all the details of the projects publicly available, head over to my <a href="https://www.linkedin.com/in/jonnylangefeld/" target="_blank">Linked In page</a>, where I keep an up-to-date list of my projects.</p>
 
   <p><b>Resumé</b></p>
   <p>If you're interested in my professional and educational history, you can take a look at my resumé <a href="/assets/about/Resumé Jonathan Langefeld.pdf" target="_blank">here</a>.</p>
