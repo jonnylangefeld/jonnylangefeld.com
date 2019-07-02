@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to add a Read More Button to Your Jekyll Blog That Doesn't Suck"
+title:  "How to add a Read More Button That Doesn't Suck to Your Jekyll Blog"
 categories: []
 tags:
 - blog
