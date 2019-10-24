@@ -14,7 +14,7 @@ meta: {}
 Welcome! You found me online!    
 This is my first post on my personal website, on which I post things I'm interested in. I will use this space for thoughts, ideas, experiences and dreams. 
 My name is Jonathan Langefeld, but almost everybody calls me Jonny. My mum used to call me Jonny from a young age and it stated in 6th grade, when a teacher picked up my nickname, that everybody started calling me Jonny.    
-I live in Silicon Valley where I am persuing a professional carrier as computer scientist. Over the years I gained a broad skill set that reaches from software development over project management all the way to data science and machine learning. If you want to learn more about me, head over to the [about page](/about) or check out my [resumé](/assets/about/Resumé Jonathan Langefeld.pdf).
+I live in Silicon Valley where I am persuing a professional carrier as computer scientist. Over the years I gained a broad skill set that reaches from software development over project management all the way to data science and machine learning. If you want to learn more about me, head over to the [about page](/about) or check out my [resumé](/assets/about/Resumé Jonny Langefeld.pdf).
 
 ### What you can expect:
 
