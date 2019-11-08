@@ -61,7 +61,7 @@ Let's change our simple hello world program from above, so that an actual web se
 package main
 
 import (
-    "github.com/kataras/iris"
+    "github.com/kataras/iris/v12"
 )
 
 func main() {
@@ -86,7 +86,7 @@ func newApp() *iris.Application {
 }
 ```
 
-The comments should explain what we did there. Note that I now import `github.com/kataras/iris`. Try to run 
+The comments should explain what we did there. Note that I now import `github.com/kataras/iris/v12`. Try to run 
 
 ```bash
 go build
@@ -116,7 +116,7 @@ The `ctx.Params().Get("name")` part accesses the variable from the context. Don'
 ```go
 import (
     "fmt"
-    "github.com/kataras/iris"
+    "github.com/kataras/iris/v12"
 )
 ```
 

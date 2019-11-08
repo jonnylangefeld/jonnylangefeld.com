@@ -55,7 +55,7 @@ import (
     "github.com/jinzhu/gorm"
     _ "github.com/jinzhu/gorm/dialects/postgres"
     "go-api-base-project/model"
-    "github.com/kataras/iris"
+    "github.com/kataras/iris/v12"
 )
 ```
 
@@ -120,7 +120,7 @@ import (
 
     "github.com/jinzhu/gorm"
     _ "github.com/jinzhu/gorm/dialects/postgres"
-    "github.com/kataras/iris"
+    "github.com/kataras/iris/v12"
 )
 
 func main() {
