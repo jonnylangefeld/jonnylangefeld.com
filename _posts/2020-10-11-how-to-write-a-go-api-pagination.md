@@ -16,7 +16,9 @@ type: post
 published: true
 meta: {}
 ---
-Pagination is important for any possible list response of arrays with an undefined length. That is so we control the throughput and load on our API. We don't want to query the database for 10 Million items at once and send them all through the http server. But rather we send a finite subset slice of the array of undefined length.  
+*This plog post is part of a [series of blog posts](/blog/how-to-write-a-go-api-the-ultimate-guide) on how to write a go API with all best practices. If you're here just for pagination, keep on reading. If you want all the context including project setup and scaffolding, read the **[Ultimate Guide](/blog/how-to-write-a-go-api-the-ultimate-guide)***.
+
+Pagination is important for any possible list response of arrays with undefined length. That is so we control the throughput and load on our API. We don't want to query the database for 10 Million items at once and send them all through the http server. But rather we send a finite subset slice of the array of undefined length.  
 
 The general concept will be an API object with an `Items` slice and a `NextPageID`:
 
