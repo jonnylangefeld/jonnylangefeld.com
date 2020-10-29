@@ -109,11 +109,11 @@ Usage of go-api:
 This is certainly an opinionated decision, but my favorite logger is [zap](https://github.com/uber-go/zap). It can be configured in all kinds of ways, but I like to keep it very simple. This is the configuration I use:
 
 ```go
-	// configure logger
-	log, _ := zap.NewProduction(zap.WithCaller(false))
-	defer func() {
-		_ = log.Sync()
-	}()
+// configure logger
+log, _ := zap.NewProduction(zap.WithCaller(false))
+defer func() {
+    _ = log.Sync()
+}()
 ```
 <sup>(*[source](https://github.com/jonnylangefeld/go-api/blob/v1.0.0/main.go#L34-L38)*)</sup>
 
@@ -133,18 +133,18 @@ Which gives me a beautiful log output like the following:
 This one is not ultimately necessary but I've seen it a lot and ensures cleanup tasks when the API is shutting down. A graceful exit is implemented by making a channel in the beginning of your program and listening for a certain event, like this one for a keyboard interrupt:
 
 ```go
-	// gracefully exit on keyboard interrupt
-	c := make(chan os.Signal, 1)
-	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
+// gracefully exit on keyboard interrupt
+c := make(chan os.Signal, 1)
+signal.Notify(c, os.Interrupt, syscall.SIGTERM)
 ```
 <sup>(*[source](https://github.com/jonnylangefeld/go-api/blob/v1.0.0/main.go#L30-L32)*)</sup>
 
 At the end of the program, after starting the webserver in a go routine (see #5), we react to the signal:
 
 ```go
-	<-c
-	log.Info("gracefully shutting down")
-	os.Exit(0)
+<-c
+log.Info("gracefully shutting down")
+os.Exit(0)
 ```
 <sup>(*[source](https://github.com/jonnylangefeld/go-api/blob/v1.0.0/main.go#L58-L61)*)</sup>
 
@@ -166,8 +166,8 @@ In the `main.go` file you can use the version as follows (after instantiating it
 
 
 ```go
-	// print current version
-	log.Info("starting up API...", zap.String("version", version))
+// print current version
+log.Info("starting up API...", zap.String("version", version))
 ```
 <sup>(*[source](https://github.com/jonnylangefeld/go-api/blob/v1.0.0/main.go#L40-L41)*)</sup>
 
@@ -195,14 +195,14 @@ My http framework of choice these days is [go-chi/chi](https://github.com/go-chi
 The server is started as go routine and listens on the configured address:
 
 ```go
-	// start the api server
-	r := api.GetRouter(log, dbClient)
-	go func() {
-		if err := http.ListenAndServe(addr, r); err != nil {
-			log.Error("failed to start server", zap.Error(err))
-			os.Exit(1)
-		}
-	}()
+// start the api server
+r := api.GetRouter(log, dbClient)
+go func() {
+    if err := http.ListenAndServe(addr, r); err != nil {
+        log.Error("failed to start server", zap.Error(err))
+        os.Exit(1)
+    }
+}()
 ```
 <sup>(*[source](https://github.com/jonnylangefeld/go-api/blob/v1.0.0/main.go#L49-L56)*)</sup>
 
@@ -272,7 +272,7 @@ In the tree above, you can spot the usage of
  Custom middlewares live in the `middleware` package. `m` is our custom middleware, imported through
 
 ```go
-	m "github.com/jonnylangefeld/go-api/pkg/middelware"
+m "github.com/jonnylangefeld/go-api/pkg/middelware"
 ```
 <sup>(*[source](https://github.com/jonnylangefeld/go-api/blob/v1.0.0/pkg/api/api.go#L13)*)</sup>
 
@@ -331,12 +331,11 @@ The article object is available for every child in the request tree, which makes
 
 Click [here](blog/how-to-write-a-go-api-pagination) to read the separate blog post on pagination.
 
-
 ### 11. Database Integration With [gorm](https://github.com/go-gorm/gorm)
 
-In [previous blog posts](/blog/how-to-write-a-go-api-part-2-database-integration) I have described how I use [gorm](https://github.com/go-gorm/gorm) as an object relational mapping framework in go APIs. That has not changed so far. I like the ease of use and the ability to still write raw SQL if I need to. That especially comes in handy if the underlying database is [postgres](https://www.postgresql.org/), which has a bunch of custom features, that no ORM would naturally cover. Go check out my [old blog post](/blog/how-to-write-a-go-api-part-2-database-integration) for in-depth coverage.
+In [previous blog posts](/blog/how-to-write-a-go-api-part-2-database-integration) I have described how I use [gorm](https://github.com/go-gorm/gorm) as an object relational mapping framework in go APIs. That has not changed so far. I like the ease of use and the ability to still write raw SQL if I need to. That especially comes in handy if the underlying database is [postgres](https://www.postgresql.org/), which has a bunch of custom features that no ORM would naturally cover. Go check out my [old blog post](/blog/how-to-write-a-go-api-part-2-database-integration) for in-depth coverage.
 
-Although, I did change how I interact with the database client. Rather than just using the bare-bone `gorm.Open()` call in the `main()` function, I do write a custom client interface, that wraps the gorm client. The custom client interface features a `Connect()` function to establish the database and a bunch of functions that will be called by the different API endpoints. This interfacing will help us later to write API integration tests with [integration tests with gomock](#13-api-integration-tests-with-gomock).
+However, I did change how I interact with the database client. Rather than just using the bare-bone `gorm.Open()` call in the `main()` function, I do write a custom client interface, that wraps the gorm client. The custom client interface features a `Connect()` function to establish the database and a bunch of functions that will be called by the different API endpoints. This interfacing will help us later to write API integration tests with [integration tests with gomock](#13-api-integration-tests-with-gomock).
 
 ```go
 // ClientInterface resembles a db interface to interact with an underlying db
@@ -471,7 +470,7 @@ Once these two functions are implemented, you are ready to go and the `article` 
 The [openapi V3](https://swagger.io/specification/) specification is the industry standard and a great way to document your API for your users. However, you don't want to end up writing an independent yaml or json file, that you have to update anytime you change something in your API.  
 On top of that it would be great if other developers working on the code have the same documentation of a given API function available. [http-swagger](https://github.com/swaggo/http-swagger) comes in to fix these problems. The source-of-truth of your API documentation will remain in the docstrings of your handlers, but will be automatically rendered into an openapi spec and displayed via the swagger-ui. Let's look into how it works.
 
-You might have seen docstrings, that look similar to this
+You might have seen docstrings that look similar to this
 ```go
 // GetArticle renders the article from the context
 // @Summary Get article by id
@@ -487,7 +486,7 @@ func GetArticle(w http.ResponseWriter, r *http.Request) {
 ```
 <sup>(*[source](https://github.com/jonnylangefeld/go-api/blob/master/pkg/api/operations.go#L12-L22)*)</sup>
 
-These are a whole bunch of key words, interpreted by [swaggo](https://github.com/swaggo/swag). Check the full documentation [here](https://github.com/swaggo/swag#declarative-comments-format). We are basically documenting all human readable text of the documentation here in the docstring of that handler function and also make links the possible returned objects. If we change something here, we'll just have to run [`make generate-docs`](https://github.com/jonnylangefeld/go-api/blob/master/Makefile#L9), and we'll get all files in the [`docs`](https://github.com/jonnylangefeld/go-api/tree/master/docs) directory, which includes an openapi json, yaml and some go code, automatically generated. If we want to inject something into the spec, like the current build version, we can do so from the `main` file:
+These are a whole bunch of key words, interpreted by [swaggo](https://github.com/swaggo/swag). Check the full documentation [here](https://github.com/swaggo/swag#declarative-comments-format). We are basically collecting all human readable text of the documentation here in the docstring of that handler function and also make links to the possible returned objects. If we change something here, we'll just have to run [`make generate-docs`](https://github.com/jonnylangefeld/go-api/blob/master/Makefile#L9), and we'll get all files in the [`docs`](https://github.com/jonnylangefeld/go-api/tree/master/docs) directory, which includes an openapi json, yaml and some go code, automatically generated. If we want to inject something into the spec, like the current build version, we can do so from the `main` file:
 
 ```go
 docs.SwaggerInfo.Version = version
@@ -508,7 +507,7 @@ Now once that's all set up, we can access the swagger UI via [http://localhost:8
 
 <img src="/assets/posts/swagger-ui.png" width="100%" align="middle" style="margin: 15px" />
 
-It comes with all the models and even examples, that you can add via struct tags like the following:
+It comes with all the models and even examples that you can add via struct tags like the following:
 
 ```go
 // Article is one instance of an article
@@ -533,7 +532,7 @@ Last but not least, I always recommend to have a staged `Dockerfile` to allow us
 
 <sup>(*[source](https://github.com/GoogleContainerTools/distroless#why-should-i-use-distroless-images)*)</sup>
 
-That means, that we build our binary through a docker container via the following:
+That means that we build our binary through a docker container via the following:
 
 ```docker
 FROM golang:1.14 as gobuild
