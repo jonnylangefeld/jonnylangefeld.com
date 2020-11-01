@@ -16,11 +16,11 @@ Often times, especially during development of software that talks to the kuberne
 
 Typically you find all this information in an [openapi](https://swagger.io/specification/) specification doc which you can view via the [Swagger UI](https://swagger.io/tools/swagger-ui/), [ReDoc](https://github.com/Redocly/redoc) or other tools of that kind.
 
-So the next logical step is to google for something like 'kubernetes swagger' or 'kubernetes openapi spec' and you'd hope for a Swagger UI to pop up and answer all your questions. But while some of those search results can lead you in the right direction, you won't get pleased with the Swagger UI you were looking for.
+So the next logical step is to google for something like 'kubernetes swagger' or 'kubernetes openapi spec' and you'd hope for a Swagger UI to pop up and answer all your questions. But while some of those search results can lead you in the right direction, you won't be pleased with the Swagger UI you were looking for.
 
-The reason for that is that the spec for every kubernetes API server is actually different due to [custom resource definitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) and therefore exposes different paths and models.
+The reason for that is the spec for every kubernetes API server is actually different due to [custom resource definitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) and therefore exposes different paths and models.
 
-And that leads us to that the kubernetes API server actually has to generate it's very own openapi specification, which we will do in the following:
+And that requires the kubernetes API server to actually generate it's very own openapi specification, which we will do in the following:
 
 <!--more-->
 
@@ -30,7 +30,7 @@ First make sure that you are connected to your kubernetes API server as your cur
 kubectl proxy --port=8080
 ```
 
-That saves us a bunch of authentication configuration, that's now all handled by `kubectl`. Run the following commands in a new terminal window to keep the reverse proxy alive (or run the reverse proxy in the background). Save the Swagger file for your kubernetes API server via the following command:
+That saves us a bunch of authentication configuration that's now all handled by `kubectl`. Run the following commands in a new terminal window to keep the reverse proxy alive (or run the reverse proxy in the background). Save the Swagger file for your kubernetes API server via the following command:
 
 ```bash
 curl localhost:8080/openapi/v2 > k8s-swagger.json
