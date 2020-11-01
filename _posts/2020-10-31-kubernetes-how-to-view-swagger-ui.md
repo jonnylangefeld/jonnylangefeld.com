@@ -48,3 +48,5 @@ docker run \
 ```
 
 Now visit [http://localhost](http://localhost) and you'll get a Swagger UI including the models and paths of all custom resources installed on your cluster!
+
+<img src="/assets/posts/swagger-ui-argo.png" width="100%" align="middle" style="margin: 15px" />
