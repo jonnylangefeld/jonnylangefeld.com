@@ -329,7 +329,7 @@ The article object is available for every child in the request tree, which makes
 
 ### 10. Pagination
 
-Click [here](blog/how-to-write-a-go-api-pagination) to read the separate blog post on pagination.
+Click [here](/blog/how-to-write-a-go-api-pagination) to read the separate blog post on pagination.
 
 ### 11. Database Integration With [gorm](https://github.com/go-gorm/gorm)
 
