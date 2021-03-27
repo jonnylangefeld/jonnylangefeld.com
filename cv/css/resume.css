@@ -1,0 +1,593 @@
+@font-face {
+	font-family: 'Computer Modern Serif';
+	src: url('/css/fonts/cmunrm.eot');
+	src: url('/css/fonts/cmunrm.eot?#iefix') format('embedded-opentype'), url('/css/fonts/cmunrm.woff') format('woff'), url('/css/fonts/cmunrm.ttf') format('truetype'), url('/css/fonts/cmunrm.svg#cmunrm') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Computer Modern Serif';
+	src: url('/css/fonts/cmunbx.eot');
+	src: url('/css/fonts/cmunbx.eot?#iefix') format('embedded-opentype'), url('/css/fonts/cmunbx.woff') format('woff'), url('/css/fonts/cmunbx.ttf') format('truetype'), url('/css/fonts/cmunbx.svg#cmunbx') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Computer Modern Serif';
+	src: url('/css/fonts/cmunti.eot');
+	src: url('/css/fonts/cmunti.eot?#iefix') format('embedded-opentype'), url('/css/fonts/cmunti.woff') format('woff'), url('/css/fonts/cmunti.ttf') format('truetype'), url('/css/fonts/cmunti.svg#cmunti') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Computer Modern Serif';
+	src: url('/css/fonts/cmunbi.eot');
+	src: url('/css/fonts/cmunbi.eot?#iefix') format('embedded-opentype'), url('/css/fonts/cmunbi.woff') format('woff'), url('/css/fonts/cmunbi.ttf') format('truetype'), url('/css/fonts/cmunbi.svg#cmunbi') format('svg');
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+/*-- default -------------------------------------------------------*/
+
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-size: 0.875em/* 14px / 16px */
+	;
+}
+
+a:link,
+a:visited {
+	color: #036;
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	color: #C30;
+	text-decoration: underline;
+}
+
+fieldset,
+img {
+	border-style: none;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+q:before,
+q:after {
+	content: '';
+}
+
+
+/*abbr,
+acronym {
+	border-style: none;
+}*/
+
+ol,
+ul {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 0;
+	margin-left: 1.25em;
+	padding: 0;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+li,
+p {
+	margin: 0;
+	padding: 0.5em 0 0 0;
+}
+
+blockquote {
+	margin: 0;
+	padding: 0.2em 2em;
+}
+
+ul {
+	list-style-type: square;
+}
+
+
+/*abbr,
+acronym {
+	cursor: help;
+}*/
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption,
+th {
+	text-align: left;
+}
+
+td,
+th {
+	font-size: 1em;
+}
+
+hr {
+	height: 1px;
+	background-color: #000;
+	color: #000;
+}
+
+
+/*-- resume -------------------------------------------------------*/
+
+body,
+td,
+th,
+input,
+select,
+textarea {
+	font-family: "Computer Modern Serif", cmu_serifroman, Palatino, Georgia, Garamond, "Times New Roman", Times, serif;
+}
+
+body {
+	background-color: #DAD9D6;
+	padding: 3.0em 0;
+}
+
+h3 {
+	margin: 0;
+}
+
+.Resume,
+.BadgeArea {
+	margin: auto;
+	overflow: hidden;
+	width: 57em;
+}
+
+.BadgeArea {
+	padding: 2em 0;
+}
+
+.BadgeList {
+	display: none;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+.BadgeList li {
+	display: block;
+	float: left;
+	padding-right: 1em;
+}
+
+.Resume {
+	border: solid 1px #666;
+	border-bottom-width: 5px;
+	border-top-width: 8px;
+	background-color: #FFF;
+	padding: 3em 4em;
+	-moz-box-shadow: 0px 0px 8px #A8A091;
+	-webkit-box-shadow: 0px 0px 8px #A8A091;
+	box-shadow: 0px 0px 8px #A8A091;
+}
+
+.ContactInfo .PersonName,
+.Qualifications,
+.EducationHistory,
+.EmploymentHistory {
+	color: #333;
+	clear: both;
+	font-variant: small-caps;
+}
+
+.Qualifications,
+.EducationHistory,
+.EmploymentHistory,
+.Projects .ProjectsHeader {
+	text-align: right;
+}
+
+.Qualifications,
+.EducationHistory,
+.EmploymentHistory {
+	font-size: 1.5em;
+	/* 21px / 14px */
+	margin: 0.5em 0em 0.25em 0em;
+	border-bottom: solid 1px silver;
+}
+
+.EmployerOrg .EmployerOrgName,
+.Degree .DegreeName,
+.Degree .Name {
+	font-size: 1.28571428571429em;
+	/* 18px / 14px */
+	font-weight: bold;
+}
+
+.EmployerOrg h3 .PostalAddress {
+	font-weight: normal;
+}
+
+.EmployerOrg h3 .Municipality {
+	margin-left: 0.5em;
+}
+
+.EmployerOrg {
+	border-top: 1px solid #F1F1F1;
+	margin-top: 1em;
+	padding: 1em 0 0 0;
+}
+
+.EmployerOrg:first-child,
+.EmployerOrg-Section {
+	border-top-style: none;
+	margin-top: 0;
+}
+
+.Qualifications .Competencies {
+	padding-bottom: 2em;
+}
+
+.ua-ie-4 .Qualifications,
+.ua-ie-5 .Qualifications,
+.ua-ie-6 .Qualifications,
+.ua-ie-4 .EducationHistory,
+.ua-ie-5 .EducationHistory,
+.ua-ie-6 .EducationHistory,
+.ua-ie-4 .EmploymentHistory,
+.ua-ie-5 .EmploymentHistory,
+.ua-ie-6 .EmploymentHistory,
+.ua-ie-4 .ContactInfo,
+.ua-ie-5 .ContactInfo,
+.ua-ie-6 .ContactInfo {
+	width: 95%;
+	/* Helps with IE flicker */
+}
+
+.ContactInfo {
+	height: 7em;
+}
+
+.ContactInfo .NameHeader {
+	float: left;
+	padding-left: 1em;
+}
+
+.ua-webkit .ContactInfo .NameHeader {
+	padding-left: 2em;
+}
+
+.ContactInfo .PersonName {
+	font-size: 4em;
+	font-weight: normal;
+	line-height: 1em;
+	margin: 0;
+	padding: 0;
+}
+
+.ContactInfo .Objective {
+	clear: both;
+	text-align: right;
+	font-size: 1.71428571428571em/* 24px / 14px */
+	;
+	/*	letter-spacing: 0.125em;*/
+	margin: 0;
+	padding: 0;
+	font-style: italic;
+	font-variant: small-caps;
+	/*	text-transform: uppercase;*/
+}
+
+.ContactInfo .ContactMethod {
+	float: right;
+	line-height: 1.5em;
+	padding: 1.125em 1em 0 0;
+}
+
+.ua-webkit .ContactInfo .ContactMethod {
+	padding: 1.125em 2em 0 0;
+}
+
+.ExecutiveSummary {
+	padding: 1.5em 3em 0 3em;
+	border-top: solid 1px silver;
+	font-style: italic;
+	line-height: 1.5em;
+	text-align: justify;
+}
+
+.Degree {
+	margin: 1em 0;
+}
+
+.Degree .EducationalMeasure {
+	color: #333;
+	font-weight: normal;
+}
+
+ul.QualificationList {
+	overflow: hidden;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.Qualifications ul.CompetencyList {
+	list-style-type: square;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 0;
+	margin-left: 15pt;
+	padding: 0;
+}
+
+li.Competencies {
+	display: block;
+	float: left;
+	/* width: 32%; */
+	padding: 0;
+	margin: 0;
+}
+
+li.Competencies:first-child {
+    width: 50%;
+    margin-right: 1em;
+}
+
+.CompetencyHeading {
+	/* cursor: help; */
+	display: block;
+	display: inline-block;
+	color: #333;
+	font-style: italic;
+	font-size: 1.2em;
+	font-weight: normal;
+	margin: 0.5em 0 0 0;
+}
+
+#qualities.CompetencyHeading {
+	margin-top: 1em;
+}
+
+ul.Qualifications ul {
+	padding-left: 2em;
+}
+
+.PositionHistory {
+	padding: 0.75em 0 0.25em 2em;
+}
+
+.ProjectHistory .Project {
+	padding: 0.375em 0 0.25em 2em;
+}
+
+.PositionHistory .Title,
+.ProjectHistory .Project .Name {
+	font-weight: bold;
+}
+
+.PositionHistory .Title a,
+.ProjectHistory .Project .Name a {
+	font-weight: normal;
+}
+
+.ProjectHistory .Project .projectType,
+.organizationType {
+	font-style: italic;
+}
+
+.EmployerDates,
+.PositionDates,
+.ProjectDates,
+.DegreeDate {
+	color: #666;
+	float: right;
+	font-style: italic;
+}
+
+.EmployerDates,
+.DegreeDate {
+	font-size: 1.2em;
+	font-weight: normal;
+}
+
+code,
+.RevisionDate {
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.RevisionDate {
+	color: #999;
+	float: right;
+}
+
+.BadgeList li {
+	display: block;
+	float: left;
+}
+
+.BadgeArea a {
+	float: left;
+	opacity: 0.5;
+}
+
+.BadgeArea a:hover,
+.BadgeArea a:active {
+	opacity: 1.0;
+}
+
+
+/*-- print -------------------------------------------------------*/
+
+.ContactInfo,
+.ExecutiveSummary,
+.Degree,
+.PositionHistory,
+.QualificationList {
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	-o-column-break-inside: avoid;
+	-ms-column-break-inside: avoid;
+	column-break-inside: avoid;
+	page-break-inside: avoid;
+}
+
+@media print {
+	body {
+		background-color: #FFF;
+		font-size: 8pt;
+		margin: 0;
+		padding: 0;
+		width: auto;
+	}
+	@page {
+		margin: 0.5in 0.75in;
+		padding: 0;
+	}
+	.ContactInfo .PersonName {
+		font-size: 36pt;
+	}
+	.Qualifications,
+	.EducationHistory,
+	.EmploymentHistory {
+		font-size: 12pt;
+		margin-top: -0.5em;
+	}
+	.EmploymentHistory {
+		margin-top: 0;
+	}
+	.EmployerOrg .EmployerOrgName,
+	.Degree .DegreeName,
+	.Degree .Name {
+		font-size: 10pt;
+	}
+	.EmployerDates,
+	.DegreeDate,
+	.CompetencyHeading {
+		font-size: 10pt;
+		font-weight: normal;
+	}
+	.RevisionDate {
+		color: #666;
+		float: none;
+		font-size: 7pt;
+		text-align: right;
+		padding-top: 2em;
+	}
+	.ContactInfo .NameHeader,
+	.ua-webkit .ContactInfo .NameHeader {
+		padding: 0;
+	}
+	.ua-webkit .ContactInfo .ContactMethod {
+		padding: 1.125em 1em 0 0;
+	}
+	.ExecutiveSummary {
+		padding-top: 2em;
+	}
+	a:link,
+	a:visited,
+	a:hover,
+	.EmployerDates,
+	.PositionDates,
+	.ProjectDates,
+	.DegreeDate {
+		color: #000;
+	}
+	li,
+	p {
+		margin: 0;
+		padding: 0;
+	}
+	.BadgeArea {
+		visibility: hidden
+	}
+	.Resume {
+		margin: 0;
+		padding: 0;
+		width: auto;
+	}
+	.EmployerOrg {
+		border-style: none;
+		margin: 0;
+	}
+	.ExecutiveSummary,
+	.Qualifications,
+	.EducationHistory,
+	.EmploymentHistory,
+	.Projects .ProjectsHeader {
+		border-color: #333;
+		border-width: 1pt;
+	}
+	.BadgeList {
+		display: none;
+	}
+	.Resume {
+		background-color: transparent;
+		border-style: none;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+}
