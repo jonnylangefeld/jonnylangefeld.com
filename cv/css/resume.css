@@ -227,7 +227,7 @@ h3 {
 	border-bottom-width: 5px;
 	border-top-width: 8px;
 	background-color: #FFF;
-	padding: 3em 4em;
+	padding: 3em 3em;
 	-moz-box-shadow: 0px 0px 8px #A8A091;
 	-webkit-box-shadow: 0px 0px 8px #A8A091;
 	box-shadow: 0px 0px 8px #A8A091;
@@ -351,7 +351,7 @@ h3 {
 }
 
 .ExecutiveSummary {
-	padding: 1.5em 3em 0 3em;
+	padding: 1.5em 0 0 2em;
 	border-top: solid 1px silver;
 	font-style: italic;
 	line-height: 1.5em;

@@ -16,7 +16,7 @@ meta: {}
   In my current role at <a href="https://getcruise.com">cruise</a>, I am helping to shape the future of self driving cars by building developer productivity tools, infrastructure as code and automation for the backend of autonomous driving. My previous hands-on experience in global teams with IBM and Mercedes-Benz is built upon numerous projects to build data-driven products, high throughput APIs and collection, storage, preparation and analysis of data to make valuable predictions and support decisions.
   </p>
 
-  <p>Many of my skills are self-taught on evenings and weekends. The internet has taught me about the command line, building websites, building RESTful APIs, <a href="https://github.com/jonnylangefeld">getting comfortable with git</a>, <a href="https://github.com/jonnylangefeld/ChordPro">writing programs with Python</a>, <a href="https://github.com/jonnylangefeld/SPSSTwitter">creating free Add-on nodes for SPSS Modeler</a> and <a h href="https://www.kaggle.com/jonnylangefeld/explore-dividends">analyzing data with pandas</a>, <a href="https://github.com/jonnylangefeld/learning/blob/master/Machine%20Learning/scikit-learn%20Classifier.ipynb">skikit learn and numpy</a>. I read everything about Docker on a beach in Cuba with an app that allowed me to download websites. Ever since I have been a heavy user of the software and <a href="https://www.youtube.com/watch?v=JprTjTViaEA">teach others how to use it.</a> That again helped me to get into the Cloud-Native space and I learned everything about <a href="https://www.youtube.com/watch?v=f4Ynjl_JIm0">Kubernetes</a> and Helm. I constantly try to further educate myself. I have written multiple production ready <a href="https://github.com/jonnylangefeld/datadog-operator">kubernetes controllers and operators</a>. (All links lead to examples of my work).</p>
+  <p>Many of my skills are self-taught on evenings and weekends. The internet has taught me about the command line, building websites, building RESTful APIs, <a href="https://github.com/jonnylangefeld">getting comfortable with git</a>, <a href="https://github.com/jonnylangefeld/ChordPro">writing programs with Python</a>, <a href="https://github.com/jonnylangefeld/SPSSTwitter">creating free Add-on nodes for SPSS Modeler</a> and <a h href="https://www.kaggle.com/jonnylangefeld/explore-dividends">analyzing data with pandas</a>, <a href="https://github.com/jonnylangefeld/learning/blob/master/Machine%20Learning/scikit-learn%20Classifier.ipynb">skikit learn and numpy</a>. I read everything about Docker on a beach in Cuba with an app that allowed me to download websites. Ever since I have been a heavy user of the software and <a href="https://www.youtube.com/watch?v=JprTjTViaEA">teach others how to use it.</a> That again helped me to get into the Cloud-Native space and I learned everything about <a href="https://www.youtube.com/watch?v=f4Ynjl_JIm0">Kubernetes</a> and Helm. I have written multiple production ready <a href="https://github.com/jonnylangefeld/datadog-operator">kubernetes controllers and operators</a>. I constantly try to further educate myself. (All links lead to examples of my work).</p>
 
   <p><b>University</b></p>
 
@@ -27,13 +27,13 @@ meta: {}
   <p>I have worked on a great variety of projects in various roles. They all were data driven and software development centric. I have been a data science consultant with IBM for many large corporations like Daimler, Continental, Porsche, Bosch, Fiducia. I have been a software developer with Mercedes, my startup energy-smart, Cruise, as well as for open-source software. I worked as a backend engineer for Mercedes-Benz and Cruise in Silicon Valley. For all details of the projects publicly available, head over to my <a href="https://www.linkedin.com/in/jonnylangefeld/" target="_blank">Linked In page</a>, where I keep an up-to-date list of my projects.</p>
 
   <p><b>Resumé</b></p>
-  <p>If you're interested in my professional and educational history, you can take a look at my resumé <a href="/assets/about/Resum%C3%A9%20Jonny%20Langefeld.pdf?v=3" target="_blank">here</a>.</p>
+  <p>If you're interested in my professional and educational history, you can take a look at my resumé <a href="/assets/about/Resum%C3%A9%20Jonny%20Langefeld.pdf?v=4" target="_blank">here</a>.</p>
 </div>
 
 
 <div style="width: 100%; float: left; margin-top: 20px">
   <hr />
-  <form id="contactform" method="POST" action="https://formspree.io/jonny.langefeld@gmail.com">
+  <form id="contactform" method="POST" action="https://formspree.io/jonnylangefeld@gmail.com">
     <p><b>Send me something!</b></p>
     <p><b>Email Address</b></p>
     <input type="email" name="_replyto" placeholder="Your email address">
