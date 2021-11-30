@@ -74,7 +74,7 @@ body {
 a:link,
 a:visited {
 	color: #036;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:hover,
@@ -546,8 +546,6 @@ code,
 	.ExecutiveSummary {
 		padding-top: 2em;
 	}
-	a:link,
-	a:visited,
 	a:hover,
 	.EmployerDates,
 	.PositionDates,
