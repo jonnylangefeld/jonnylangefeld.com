@@ -349,6 +349,11 @@ code {
   font-size: 85%;
 }
 
+/** twitter-tweet */
+@media screen and (max-width: 980px) and (min-width: 800px) { 
+  .twitter-tweet { max-width: -webkit-calc(100% - 10px) !important; }
+}
+
 
 /* Syntax Highlighting */
 /* Taken from https://github.com/mojombo/tpw/blob/master/css/syntax.css */
