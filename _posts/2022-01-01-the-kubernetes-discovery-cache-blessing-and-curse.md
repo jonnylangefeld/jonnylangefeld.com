@@ -28,7 +28,7 @@ Controllers like [crossplane.io](https://crossplane.io), [GCP Config Connector](
 
 <!--more-->
 
-These draw backs aren't due to high load on the Kubernetes API server. In fact, that actually has a pretty robust and advanced rate limiting mechanism through the [priority and fairness](https://kubernetes.io/docs/concepts/cluster-administration/flow-control) design that most likely will ensure that the API server doesn't crash even if a lot of requests are made.
+These drawbacks aren't due to high load on the Kubernetes API server. In fact, that actually has a pretty robust and advanced rate limiting mechanism through the [priority and fairness](https://kubernetes.io/docs/concepts/cluster-administration/flow-control) design that most likely will ensure that the API server doesn't crash even if a lot of requests are made.
 
 However, installing many CRDs on a cluster can impact the [OpenAPI spec publishing](https://github.com/crossplane/crossplane/issues/2649), as well as the [discovery cache creation](https://github.com/kubernetes/kubectl/issues/1126). OpenAPI spec creation for many CRDs has [recently been fixed](https://github.com/kubernetes/kube-openapi/pull/251) through implementing lazy marshalling. While an interesting concept, this could be the topic of another blog post as in this one we are focusing on the latter: discovery cache creation.
 
@@ -48,7 +48,7 @@ GET https://<host>/apis/templates.gatekeeper.sh/v1alpha1?timeout=32s
 GET https://<host>/apis/firestore.cnrm.cloud.google.com/v1beta1?timeout=32s
 ```
 
-This was on a cluster that already had a few controllers installed, like the [GCP Config Connector](https://github.com/GoogleCloudPlatform/k8s-config-connector) or [Gatekeeper](https://github.com/open-policy-agent/gatekeeper). I noticed the group versions like `dns.cnrm.cloud.google.com/v1beta1` or `templates.gatekeeper.sh` in the debug output relating to those controllers even though I simply queried for pods.
+This was on a cluster that already had a few controllers installed, like the [GCP Config Connector](https://github.com/GoogleCloudPlatform/k8s-config-connector) or [Gatekeeper](https://github.com/open-policy-agent/gatekeeper). I noticed the group versions like `dns.cnrm.cloud.google.com/v1beta1` or `templates.gatekeeper.sh/v1alpha1` in the debug output relating to those controllers even though I simply queried for pods.
 
 It occurred to me that these many `GET` requests would ultimately trigger the client-side rate limiting and that those `GET` requests were made to populate the discovery cache. [This reddit post](https://www.reddit.com/r/kubernetes/comments/bpfi48/comment/enuhn5v/?utm_source=share&utm_medium=web2x&context=3) helped me understand this behavior and I also [reported this back on the original Kubernetes issue regarding those ominous log messages](https://github.com/kubernetes/kubernetes/pull/101634#issuecomment-933851060), which triggered the community to [raise a new issue](https://github.com/kubernetes/kubernetes/issues/105489) altogether regarding a fix for client side throttling due to discovery caching.
 
