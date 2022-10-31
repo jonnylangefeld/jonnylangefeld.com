@@ -37,6 +37,8 @@ type BuildkiteClientInterface interface {
 
 During integration tests we just replace the `Create` function with a stub that returns a `*buildkite.Build` or an `error`.
 
+<!--more-->
+
 ### Communication Between Sub-Controllers
 
 It is often required that one controller needs to pass on information to another controller. For instance our netbox controller that provisions and documents CIDR ranges for new clusters as described in our last blog post needs to pass on the new CIDR ranges to the `ComputeSubnetwork` [as properties](https://github.com/GoogleCloudPlatform/k8s-config-connector/blob/3d23e31c10e5da222b6514140747674d2df29f98/crds/compute_v1beta1_computesubnetwork.yaml#L80), which is reconciled by the GCP Config Connector. We utilize the `Cluster` resource’s status property to pass along properties between sub-resources. That has the positive side effect that the `Cluster` resource contains all potentially generated metadata of the cluster in the status field. The root controller which reconciles the `Cluster` resource implements the logic and coordinates which source property goes to which target.
