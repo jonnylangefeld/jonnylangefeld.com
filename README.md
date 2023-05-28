@@ -1,7 +1,7 @@
 <h1><a href="https://jonnylangefeld.com/" target="_blank">jonnylangefeld.com</a></h1>
 
 [![Twitter](https://img.shields.io/badge/twitter-@jonnylangefeld-blue.svg)](http://twitter.com/jonnylangefeld)
-[![Build & Deploy](https://github.com/jonnylangefeld/jonnylangefeld.com/actions/workflows/uild-deploy.yml/badge.svg)](https://github.com/jonnylangefeld/jonnylangefeld.com/actions/workflows/uild-deploy.yml)
+[![Build & Deploy](https://github.com/jonnylangefeld/jonnylangefeld.com/actions/workflows/build-deploy.yml/badge.svg)](https://github.com/jonnylangefeld/jonnylangefeld.com/actions/workflows/build-deploy.yml)
 
 Feel free to contribute 👍 
 
