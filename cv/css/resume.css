@@ -501,6 +501,10 @@ code,
 		margin: 0;
 		padding: 0;
 		width: auto;
+		line-height: 1.5em;
+	}
+	.PositionHistory > ul {
+		line-height: 1.5em;
 	}
 	@page {
 		margin: 0.5in 0.75in;
