@@ -22,7 +22,7 @@ we at Cruise are solving them. The video is now available on YouTube:
 In the keynote I highlighted how we are using Kubernetes operators to majorly increase the automation of our cluster provisioning process. The GCP/AKS/EKS API
 call to actually create the cluster itself is just the tip of the iceberg of all the things that need to happen to get a cluster ready for production.
 
-<img src="assets/posts/kubecon.jpg" width="100%" align="middle" />
+<img src="/assets/posts/kubecon.jpg" width="100%" align="middle" />
 
 We utilize a tree of controllers and the power of custom resource definitions to extend the declarative Kubernetes API to our needs.
 
