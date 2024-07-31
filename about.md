@@ -26,7 +26,7 @@ meta: {}
   <p>I have worked on a great variety of projects in various roles. They all were data driven and software development centric. I have been a data science consultant with IBM for many large corporations like Daimler, Continental, Porsche, Bosch, Fiducia. I have been a software developer with Mercedes, my startup energy-smart, Cruise, as well as for open-source software. I worked as a backend engineer for Mercedes-Benz and Cruise in Silicon Valley. For all details of the projects publicly available, head over to my <a href="https://www.linkedin.com/in/jonnylangefeld/" target="_blank">Linked In page</a>, where I keep an up-to-date list of my projects.</p>
 
   <p><b>Resumé</b></p>
-  <p>If you're interested in my professional and educational history, you can take a look at my resumé <a href="/assets/about/Resum%C3%A9%20Jonny%20Langefeld.pdf?v=9" target="_blank">here</a>.</p>
+  <p>If you're interested in my professional and educational history, you can take a look at my resumé <a href="/assets/about/Resum%C3%A9%20Jonny%20Langefeld.pdf?v=10" target="_blank">here</a>.</p>
 </div>
 
 <div style="width: 100%; float: left; margin-top: 20px">
